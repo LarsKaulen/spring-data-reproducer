@@ -8,3 +8,5 @@ They follow the examples in the [Spring Data JDBC documentation](https://docs.sp
 In `com.example.demo.db.UserRepositoryTest` those functions are tested.
 Strangely, only those explicitly defined with the `@Query` annotation (and the automatically existing `void deleteById(Integer id)`) work.
 The derived queries either finish successfully but actually don't delete anything (see `UserRepositoryTest#test_delete_by_id_with_user` and `UserRepositoryTest#test_delete_by_username_with_void`) or they fail due to a `ClassCastException` (see `UserRepositoryTest#test_delete_by_username_with_long`).
+
+This project is used as a reproducer for https://github.com/spring-projects/spring-data-relational/issues/1334.
