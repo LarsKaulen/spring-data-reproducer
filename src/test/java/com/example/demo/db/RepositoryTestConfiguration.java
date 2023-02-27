@@ -21,9 +21,9 @@ public class RepositoryTestConfiguration extends AbstractJdbcConfiguration {
     @Bean(destroyMethod = "shutdown")
     public EmbeddedDatabase embeddedDataSource() {
 
-        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.HSQL)
+        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2)
                 .generateUniqueName(true)
-                .addScripts("classpath:com/example/demo/db/Create_HSQLDB.sql")
+                .addScripts("classpath:h2.sql")
                 .build();
     }
 
